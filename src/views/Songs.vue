@@ -1,7 +1,15 @@
 <template>
   <div class="songs pa-3">
     <h1 class="songs__title">This page is still under development</h1>
-    <p class="songs__body">You can contribute to this page on <a href="https://github.com/allexpleblord/guitar-vue-app" class="songs__link" target="_blank">GitHub</a>.</p>
+    <p class="songs__body">
+      You can contribute to this page on
+      <a
+        href="https://github.com/allexpleblord/guitar-vue-app"
+        class="songs__link"
+        target="_blank"
+        >GitHub</a
+      >.
+    </p>
   </div>
 </template>
 

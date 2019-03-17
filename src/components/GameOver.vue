@@ -5,7 +5,9 @@
       Your score was:
       <span class="font-weight-regular">{{ lastScore }}</span>
     </h2>
-    <button @click="$emit('restartGame')" class="game-over__restart primary">Want to try again?</button>
+    <button @click="$emit('restartGame')" class="game-over__restart primary">
+      Want to try again?
+    </button>
   </div>
 </template>
 
