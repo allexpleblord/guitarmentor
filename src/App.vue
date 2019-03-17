@@ -61,4 +61,7 @@ button {
   outline: none;
   border: none;
 }
+.wow {
+  visibility: hidden;
+}
 </style>

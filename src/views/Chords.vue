@@ -19,10 +19,10 @@
     </div>
 
     <!-- Chords grid -->
-    <div class="chord-grid">
-      <div class="chord wow zoomIn" v-for="chord in chords" :key="chord.name">
+    <div class="chord-grid wow zoomIn">
+      <div class="chord" v-for="chord in chords" :key="chord.name">
         <h1 class="chord__title line">{{ chord.name }}</h1>
-        <img :src="chord.image" class="chord__image">
+        <img :src="chord.image" class="chord__image" />
       </div>
     </div>
   </div>
@@ -33,27 +33,27 @@ export default {
   data() {
     return {
       chords: [
-        { name: "A", image: 'https://i.ibb.co/kXgYxNt/A.png'},
-        { name: "Am", image: 'https://i.ibb.co/kJCJgvX/Am.png'},
-        { name: "B", image: 'https://i.ibb.co/N9HGx5n/B.png'},
-        { name: "Bm", image: 'https://i.ibb.co/2dV0gcV/Bm.png'},
-        { name: "C", image: 'https://i.ibb.co/C7ZSDFh/C.png'},
-        { name: "Cm", image: 'https://i.ibb.co/FhYFm8s/Cm.png'},
-        { name: "D", image: 'https://i.ibb.co/jWcKHQk/D.png'},
-        { name: "Dm", image: 'https://i.ibb.co/chsHTRV/Dm.png'},
-        { name: "E", image: 'https://i.ibb.co/h1BfcXY/E.png'},
-        { name: "Em", image: 'https://i.ibb.co/fFM8p3k/Em.png'},
-        { name: "F", image: 'https://i.ibb.co/jvyRj1R/F.png'},
-        { name: "Fm", image: 'https://i.ibb.co/NCDzxSw/Fm.png'},
-        { name: "G", image: 'https://i.ibb.co/3yJjFYy/G.png'},
-        { name: "Gm", image: 'https://i.ibb.co/zrnqq9Q/Gm.png'}
+        { name: "A", image: "https://i.ibb.co/kXgYxNt/A.png" },
+        { name: "Am", image: "https://i.ibb.co/kJCJgvX/Am.png" },
+        { name: "B", image: "https://i.ibb.co/N9HGx5n/B.png" },
+        { name: "Bm", image: "https://i.ibb.co/2dV0gcV/Bm.png" },
+        { name: "C", image: "https://i.ibb.co/C7ZSDFh/C.png" },
+        { name: "Cm", image: "https://i.ibb.co/FhYFm8s/Cm.png" },
+        { name: "D", image: "https://i.ibb.co/jWcKHQk/D.png" },
+        { name: "Dm", image: "https://i.ibb.co/chsHTRV/Dm.png" },
+        { name: "E", image: "https://i.ibb.co/h1BfcXY/E.png" },
+        { name: "Em", image: "https://i.ibb.co/fFM8p3k/Em.png" },
+        { name: "F", image: "https://i.ibb.co/jvyRj1R/F.png" },
+        { name: "Fm", image: "https://i.ibb.co/NCDzxSw/Fm.png" },
+        { name: "G", image: "https://i.ibb.co/3yJjFYy/G.png" },
+        { name: "Gm", image: "https://i.ibb.co/zrnqq9Q/Gm.png" }
       ]
     };
   }
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 // Introduction text
 .intro {
   display: grid;
@@ -87,6 +87,11 @@ export default {
   max-width: 1200px;
   .chord {
     padding: 25px;
+    @media screen and (max-width: 960px) {
+      &__image {
+        height: 230px;
+      }
+    }
     &__title {
       color: #5e5e5e;
       font-size: 3rem;
