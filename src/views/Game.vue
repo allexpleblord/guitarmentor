@@ -1,23 +1,26 @@
 <template>
   <div class="game-page">
-    <!-- Game introduction screen -->
-    <game-intro
-      v-if="game.state === 'intro' && !game.active"
-      @initGame="initGame"
-    />
-
-    <!-- Game active screen -->
-    <game-active
-      v-if="game.state === 'game' && game.active"
-      @gameOver="gameOver"
-    />
-
-    <!-- Game over screen -->
-    <game-over
-      v-if="game.state === 'gameOver' && !game.active"
-      :lastScore="game.lastScore"
-      @restartGame="restartGame"
-    />
+    <transition name="slide" mode="out-in">
+      <!-- Game introduction screen -->
+      <game-intro
+        key="intro"
+        v-if="game.state === 'intro' && !game.active"
+        @initGame="initGame"
+      />
+      <!-- Game active screen -->
+      <game-active
+        key="active"
+        v-if="game.state === 'game' && game.active"
+        @gameOver="gameOver"
+      />
+      <!-- Game over screen -->
+      <game-over
+        key="over"
+        v-if="game.state === 'gameOver' && !game.active"
+        :lastScore="game.lastScore"
+        @restartGame="restartGame"
+      />
+    </transition>
   </div>
 </template>
 
@@ -60,6 +63,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+// Transition
+.slide-enter-active {
+  transition: all .3s ease;
+}
+.slide-leave-active {
+  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-enter, .slide-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+// Whole page
 .game-page {
   min-height: 100vh;
   display: grid;

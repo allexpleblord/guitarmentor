@@ -18,7 +18,7 @@
   font-size: 1.5rem;
   padding: 11px 30px;
   margin: 10px;
-  border-radius: 7px;
+  border-radius: 6px;
   background: #7d53de;
   color: white;
   @media screen and (max-width: 968px) {

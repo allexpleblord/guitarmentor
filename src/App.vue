@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <!-- Navigation -->
     <v-toolbar app flat class="primary">
       <v-toolbar-side-icon
         @click="drawer = !drawer"
@@ -27,6 +28,7 @@
       </v-list>
     </v-navigation-drawer>
 
+    <!-- Main content -->
     <v-content class="pa-0">
       <router-view></router-view>
     </v-content>

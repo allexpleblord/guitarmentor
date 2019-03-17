@@ -125,7 +125,7 @@ export default {
   &__title {
     font-size: 2.5rem;
   }
-  @media screen and (max-width: 968px) {
+  @media screen and (max-width: 960px) {
     margin-top: 50px;
     &__title {
       font-size: 2rem;
