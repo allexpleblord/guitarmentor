@@ -7,20 +7,23 @@
       Score: {{ score }}
     </h2>
 
-    <div class="game-grid wow zoomIn" data-wow-duration="700ms">
-      <img :src="correctChord.image" class="game-image" />
-      <div class="game-controls">
-        <button
-          v-ripple
-          :class="`game-button ${button.name}`"
-          v-for="button in buttons"
-          :key="button.name"
-          @click="buttonClick(button.correct, button.name)"
-        >
-          {{ button.name }}
-        </button>
+    <transition name="zoom" mode="out-in">
+      <!-- Change the key so that it can regognize it as a different element and make a transition -->
+      <div :key="correctChord.name" class="game-grid">
+        <img :src="correctChord.image" class="game-image" />
+        <div class="game-controls">
+          <button
+            v-ripple
+            :class="`game-button ${button.name}`"
+            v-for="button in buttons"
+            :key="button.name"
+            @click="buttonClick(button.correct, button.name)"
+          >
+            {{ button.name }}
+          </button>
+        </div>
       </div>
-    </div>
+    </transition>
   </div>
 </template>
 
@@ -103,13 +106,13 @@ export default {
         setTimeout(() => {
           btn.classList.remove("success");
           this.gameIteration();
-        }, 400);
+        }, 200);
       } else {
         btn.classList.add("error");
         setTimeout(() => {
           btn.classList.remove("error");
           this.$emit("gameOver", this.score);
-        }, 400);
+        }, 200);
       }
     }
   },
@@ -120,6 +123,30 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+// Transition
+.zoom-enter-active {
+  transition: all 0.5s;
+}
+.zoom-leave-active {
+  transition: all 0.3s;
+}
+.zoom-enter {
+  transform: scale(0.75);
+  opacity: 0;
+}
+.zoom-enter-to {
+  transform: scale(1);
+  opacity: 1;
+}
+.zoom-leave {
+  transform: scale(1);
+  opacity: 1;
+}
+.zoom-leave-to {
+  transform: scale(0.75);
+  opacity: 0;
+}
+
 // Game container
 .game {
   &__title {
