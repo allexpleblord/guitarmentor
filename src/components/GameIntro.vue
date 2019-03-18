@@ -1,5 +1,5 @@
 <template>
-  <div class="intro text-xs-center">
+  <div class="intro text-xs-center wow fadeInUp">
     <h1 class="intro__title">THE CHORD GAME</h1>
     <p class="intro__body font-weight-light pa-2 ma-0">
       You will have to pick the corresponding chord to the one you see on the

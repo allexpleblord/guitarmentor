@@ -25,7 +25,7 @@ export default {
     font-size: 3rem;
   }
   &__score {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
   &__restart {
     font-size: 1.5rem;

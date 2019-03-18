@@ -4,7 +4,7 @@
     <div style="height: 20vh;"></div>
 
     <!-- Introduction text -->
-    <div class="intro text-xs-center">
+    <div class="intro text-xs-center wow fadeInUp">
       <h1 class="intro__title">Chords</h1>
       <p class="intro__body font-weight-light pa-2">
         This section includes some of the most common chords. You don't know how
@@ -19,7 +19,7 @@
     </div>
 
     <!-- Chords grid -->
-    <div class="chord-grid wow zoomIn">
+    <div class="chord-grid wow fadeInUp">
       <div class="chord" v-for="chord in chords" :key="chord.name">
         <h1 class="chord__title line">{{ chord.name }}</h1>
         <img :src="chord.image" class="chord__image" />
@@ -87,15 +87,18 @@ export default {
   max-width: 1200px;
   .chord {
     padding: 25px;
-    @media screen and (max-width: 960px) {
-      &__image {
-        height: 230px;
-      }
-    }
     &__title {
       color: #5e5e5e;
       font-size: 3rem;
       text-align: center;
+    }
+    &__image {
+      height: 250px;
+    }
+    @media screen and (max-width: 960px) {
+      &__image {
+        height: 230px;
+      }
     }
   }
 }

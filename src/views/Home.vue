@@ -2,11 +2,11 @@
   <div class="home">
     <!-- Header -->
     <header class="header">
-      <h1 class="header__title mb-3 text-xs-center line">Guitarmentor</h1>
-      <p class="header__subtitle font-weight-light text-xs-center">
+      <h1 class="header__title mb-3 text-xs-center line wow zoomIn">Guitarmentor</h1>
+      <p class="header__subtitle font-weight-light text-xs-center wow fadeInUp" data-wow-delay="300ms">
         Learn to play guitar chords with ease
       </p>
-      <div class="header__buttons mt-2">
+      <div class="header__buttons mt-2 wow fadeInUp" data-wow-delay="700ms">
         <router-link to="/game" v-ripple class="button">
           PLAY THE GAME
         </router-link>
